@@ -1,4 +1,5 @@
 <!-- chaque appareil représente un élément de la liste -->
 <li class="list-group-item">
-  <h4>Appareil : {{ appareilName }} -- Statut : {{ appareilStatus }}</h4>
+  <!-- l'interpolation fonctionne avec tout statement typescript valable -->
+  <h4>Appareil : {{ appareilName }} -- Statut : {{ getStatus() }}</h4>
 </li>

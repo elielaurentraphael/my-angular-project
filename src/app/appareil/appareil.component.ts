@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppareilComponent {
   appareilName = 'Machine à laver';
   appareilStatus = 'éteint';
+
+  getStatus() {
+    return this.appareilStatus;
+  }
 }
