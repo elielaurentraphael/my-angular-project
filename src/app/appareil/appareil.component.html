@@ -2,5 +2,6 @@
 <li class="list-group-item">
   <!-- l'interpolation fonctionne avec tout statement typescript valable -->
   <h4>Appareil : {{ appareilName }} -- Statut : {{ getStatus() }}</h4>
+  <!-- liaison TWO WAY BINDING - Essayer dans le DOM et dans appareil.component.ts -->
   <input type="text" class="form-control" [(ngModel)]="appareilName" />
 </li>
