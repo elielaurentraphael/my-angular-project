@@ -8,6 +8,10 @@
         <app-appareil></app-appareil>
         <app-appareil></app-appareil>
       </ul>
+      <!-- ce bouton est enable si isAuth est true -->
+      <button class="btn btn-success mt-3" [disabled]="!isAuth">
+        Tout allumer
+      </button>
     </div>
   </div>
 </div>
