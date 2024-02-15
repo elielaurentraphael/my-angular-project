@@ -2,4 +2,5 @@
 <li class="list-group-item">
   <!-- l'interpolation fonctionne avec tout statement typescript valable -->
   <h4>Appareil : {{ appareilName }} -- Statut : {{ getStatus() }}</h4>
+  <input type="text" class="form-control" [(ngModel)]="appareilName" />
 </li>
