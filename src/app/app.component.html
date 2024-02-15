@@ -8,8 +8,13 @@
         <app-appareil></app-appareil>
         <app-appareil></app-appareil>
       </ul>
-      <!-- ce bouton est enable si isAuth est true -->
-      <button class="btn btn-success mt-3" [disabled]="!isAuth">
+      <!-- property binding, du code ts vers le DOM. On utilise des crochets-->
+      <!-- event binding, du DOM vers le code ts. On utilise des parenthèses -->
+      <button
+        class="btn btn-success mt-3"
+        [disabled]="!isAuth"
+        (click)="onOnAll()"
+      >
         Tout allumer
       </button>
     </div>

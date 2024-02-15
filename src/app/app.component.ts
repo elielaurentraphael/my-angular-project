@@ -15,4 +15,9 @@ export class AppComponent {
       this.isAuth = true;
     }, 4000);
   }
+
+  // méthode de simulation de tout allumer d'un seul coup
+  onOnAll() {
+    alert('On allume tout !');
+  }
 }
