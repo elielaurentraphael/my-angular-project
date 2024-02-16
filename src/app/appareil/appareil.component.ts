@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-appareil',
@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './appareil.component.scss',
 })
 export class AppareilComponent {
-  appareilName = 'Machine à laver';
-  appareilStatus = 'éteint';
+  @Input() appareilName!: string;
+  @Input() appareilStatus!: string;
 
   getStatus() {
     return this.appareilStatus;

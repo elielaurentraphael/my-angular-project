@@ -9,6 +9,10 @@ export class AppComponent {
   // par défaut, l'user n'est pas authentifié
   isAuth = false;
 
+  appareilOne = 'Machine à laver';
+  appareilTwo = 'Télévision';
+  appareilThree = 'Ordinateur';
+
   constructor() {
     // simulation de la prcédure d'authentification de l'user
     setTimeout(() => {
