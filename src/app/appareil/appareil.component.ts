@@ -1,3 +1,4 @@
+// Input s'importe depuis angular/core
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -6,6 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './appareil.component.scss',
 })
 export class AppareilComponent {
+  // les propriétés personnalisées se déclarent avec le decorator Input
   @Input() appareilName!: string;
   @Input() appareilStatus!: string;
 
