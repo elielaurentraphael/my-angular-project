@@ -14,4 +14,13 @@ export class AppareilComponent {
   getStatus() {
     return this.appareilStatus;
   }
+
+  // texte de couleur verte si l'appareil est allumé, rouge pour appareil éteint
+  getColor() {
+    if (this.appareilStatus === 'allumé') {
+      return 'green';
+    } else {
+      return 'red';
+    }
+  }
 }

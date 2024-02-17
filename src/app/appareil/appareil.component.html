@@ -5,8 +5,11 @@
     style="width: 20px; height: 20px; background-color: red"
     *ngIf="appareilStatus === 'éteint'"
   ></div>
-  <!-- l'interpolation fonctionne avec tout statement typescript valable -->
-  <h4>Appareil : {{ appareilName }} -- Statut : {{ getStatus() }}</h4>
+  <!-- la directive par attribut ngStyle permet d'appliquer des styles d'une manière dynamique à un élément du DOM -->
+  <!-- l'interpolation {{ ... }} fonctionne avec tout statement typescript valable -->
+  <h4 [ngStyle]="{ color: getColor() }">
+    Appareil : {{ appareilName }} -- Statut : {{ getStatus() }}
+  </h4>
   <!-- liaison TWO WAY BINDING - Essayer dans le DOM et dans appareil.component.ts -->
   <input type="text" class="form-control" [(ngModel)]="appareilName" />
 </li>
