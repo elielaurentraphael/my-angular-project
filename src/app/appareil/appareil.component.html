@@ -1,5 +1,12 @@
 <!-- chaque appareil représente un élément de la liste -->
-<li class="list-group-item">
+<!-- la directive par attribut ngClass permet d'appliquer des class d'une manière dynamique à un objet du DOM (ici, des class bootstrap) -->
+<li
+  [ngClass]="{
+    'list-group-item': true,
+    'list-group-item-success': appareilStatus === 'allumé',
+    'list-group-item-danger': appareilStatus === 'éteint'
+  }"
+>
   <!-- ce div existe uniquement quand l'appareil est éteint -->
   <div
     style="width: 20px; height: 20px; background-color: red"
