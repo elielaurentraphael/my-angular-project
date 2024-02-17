@@ -9,8 +9,13 @@ export class AppComponent {
   // par défaut, l'user n'est pas authentifié
   isAuth = false;
 
-  // simulation de la date du dernier mis à jour des données
-  lastUpdate = new Date();
+  // simulation d'aller chercher la date au backend (sur un serveur)
+  lastUpdate: Promise<Date> = new Promise((resolve, reject) => {
+    const date = new Date();
+    setTimeout(() => {
+      resolve(date);
+    }, 4000);
+  });
 
   // les objets variables sont contenus dans un array
   appareils = [
