@@ -9,6 +9,9 @@ export class AppComponent {
   // par défaut, l'user n'est pas authentifié
   isAuth = false;
 
+  // simulation de la date du dernier mis à jour des données
+  lastUpdate = new Date();
+
   // les objets variables sont contenus dans un array
   appareils = [
     {
