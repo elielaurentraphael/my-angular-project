@@ -1,5 +1,10 @@
 <!-- chaque appareil représente un élément de la liste -->
 <li class="list-group-item">
+  <!-- ce div existe uniquement quand l'appareil est éteint -->
+  <div
+    style="width: 20px; height: 20px; background-color: red"
+    *ngIf="appareilStatus === 'éteint'"
+  ></div>
   <!-- l'interpolation fonctionne avec tout statement typescript valable -->
   <h4>Appareil : {{ appareilName }} -- Statut : {{ getStatus() }}</h4>
   <!-- liaison TWO WAY BINDING - Essayer dans le DOM et dans appareil.component.ts -->
