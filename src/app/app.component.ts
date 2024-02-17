@@ -9,9 +9,21 @@ export class AppComponent {
   // par défaut, l'user n'est pas authentifié
   isAuth = false;
 
-  appareilOne = 'Machine à laver';
-  appareilTwo = 'Télévision';
-  appareilThree = 'Ordinateur';
+  // les objets variables sont contenus dans un array
+  appareils = [
+    {
+      name: 'Machine à laver',
+      status: 'éteint',
+    },
+    {
+      name: 'Télévision',
+      status: 'allumé',
+    },
+    {
+      name: 'Ordinateur',
+      status: 'éteint',
+    },
+  ];
 
   constructor() {
     // simulation de la prcédure d'authentification de l'user

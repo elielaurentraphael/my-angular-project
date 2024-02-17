@@ -4,17 +4,11 @@
       <h2>Mes appareils</h2>
       <!-- liste des appareils -->
       <ul class="list-group">
+        <!-- la directive structurel *ngFor permet d'afficher, par itération, des objets contenus dans un array -->
         <app-appareil
-          [appareilName]="appareilOne"
-          [appareilStatus]="'éteint'"
-        ></app-appareil>
-        <app-appareil
-          [appareilName]="appareilTwo"
-          [appareilStatus]="'allumé'"
-        ></app-appareil>
-        <app-appareil
-          [appareilName]="appareilThree"
-          [appareilStatus]="'éteint'"
+          *ngFor="let appareil of appareils"
+          [appareilName]="appareil.name"
+          [appareilStatus]="appareil.status"
         ></app-appareil>
       </ul>
       <!-- property binding, du code ts vers le DOM. On utilise des crochets-->
