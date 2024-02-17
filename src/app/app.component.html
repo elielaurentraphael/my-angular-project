@@ -4,7 +4,13 @@
       <h2>Mes appareils</h2>
 
       <!-- affichage de la date du dernier mis à jour (voir le résultat dans la page web) -->
-      <p>Mis à jour: {{ lastUpdate }}</p>
+      <!-- pipe simple -->
+      <p>Mis à jour: {{ lastUpdate | date }}</p>
+      <!-- pipe avec paramètres -->
+      <p>Mis à jour: {{ lastUpdate | date : "EEEE d MMMM y" }}</p>
+      <!-- pipe en chaîne. Essayer de passer uppercasePipe avant datePipe -->
+      <!-- l'ordre des pipe est important -->
+      <p>Mis à jour: {{ lastUpdate | date : "EEEE d MMMM y" | uppercase }}</p>
 
       <!-- liste des appareils -->
       <ul class="list-group">
