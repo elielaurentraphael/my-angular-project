@@ -18,21 +18,7 @@ export class AppComponent {
     }, 4000);
   });
 
-  // les objets variables sont contenus dans un array
-  appareils = [
-    {
-      name: 'Machine à laver',
-      status: 'éteint',
-    },
-    {
-      name: 'Télévision',
-      status: 'allumé',
-    },
-    {
-      name: 'Ordinateur',
-      status: 'éteint',
-    },
-  ];
+  tableauDesAppareils!: any[];
 
   constructor(private appareilService: AppareilService) {
     // simulation de la prcédure d'authentification de l'user
