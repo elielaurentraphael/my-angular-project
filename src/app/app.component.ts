@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppareilService } from './services/appareil.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { AppareilService } from './services/appareil.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   // par défaut, l'user n'est pas authentifié
   isAuth = false;
 
@@ -25,6 +25,10 @@ export class AppComponent {
     setTimeout(() => {
       this.isAuth = true;
     }, 4000);
+  }
+
+  ngOnInit() {
+    this.tableauDesAppareils = this.appareilService.appareils;
   }
 
   // méthode de simulation de tout allumer d'un seul coup

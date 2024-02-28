@@ -10,7 +10,7 @@
       <ul class="list-group">
         <!-- la directive structurel *ngFor permet d'afficher, par itération, des objets contenus dans un array -->
         <app-appareil
-          *ngFor="let appareil of appareils"
+          *ngFor="let appareil of tableauDesAppareils"
           [appareilName]="appareil.name"
           [appareilStatus]="appareil.status"
         ></app-appareil>
