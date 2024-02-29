@@ -24,6 +24,13 @@
       >
         Tout allumer
       </button>
+      <button
+        class="btn btn-danger mt-3 ms-2"
+        [disabled]="!isAuth"
+        (click)="onOffAll()"
+      >
+        Tout éteindre
+      </button>
     </div>
   </div>
 </div>

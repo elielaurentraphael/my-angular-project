@@ -33,6 +33,10 @@ export class AppComponent implements OnInit {
 
   // méthode de simulation de tout allumer d'un seul coup
   onOnAll() {
-    alert('On allume tout !');
+    this.appareilService.switchOnAll();
+  }
+
+  onOffAll() {
+    this.appareilService.switchOffAll();
   }
 }
