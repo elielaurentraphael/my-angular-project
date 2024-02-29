@@ -28,4 +28,14 @@ export class AppareilService {
       appareil.status = 'éteint';
     }
   }
+
+  // méthode d'allumage individuelle
+  switchOnOne(index: number) {
+    this.appareils[index].status = 'allumé';
+  }
+
+  // méthode d'extinction individuelle
+  switchOffOne(index: number) {
+    this.appareils[index].status = 'éteint';
+  }
 }
