@@ -15,12 +15,14 @@ export class AppareilService {
     },
   ];
 
+  // méthode pour tout allumer
   switchOnAll() {
     for (let appareil of this.appareils) {
       appareil.status = 'allumé';
     }
   }
 
+  // méthode pour tout éteindre
   switchOffAll() {
     for (let appareil of this.appareils) {
       appareil.status = 'éteint';

@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
 
   tableauDesAppareils!: any[];
 
+  // injection de AppareilService dans AppComponent
   constructor(private appareilService: AppareilService) {
     // simulation de la prcédure d'authentification de l'user
     setTimeout(() => {
@@ -27,15 +28,17 @@ export class AppComponent implements OnInit {
     }, 4000);
   }
 
+  // angular cherche tableauDesAppareils dans AppareilService
   ngOnInit() {
     this.tableauDesAppareils = this.appareilService.appareils;
   }
 
-  // méthode de simulation de tout allumer d'un seul coup
+  // AppComponent appelle la méthode switchOnAll() de AppareilService par sa méthode onOnAll()
   onOnAll() {
     this.appareilService.switchOnAll();
   }
 
+  // AppComponent appelle la méthode switchOffAll() de AppareilService par sa méthode onOffAll()
   onOffAll() {
     this.appareilService.switchOffAll();
   }
