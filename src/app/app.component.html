@@ -8,9 +8,10 @@
 
       <!-- liste des appareils -->
       <ul class="list-group">
-        <!-- la directive structurel *ngFor permet d'afficher, par itération, des objets contenus dans un array -->
+        <!-- la directive structurel *ngFor permet d'afficher, par itération, des objets contenus dans un array et, de récupérer l'index de chaque objet -->
         <app-appareil
-          *ngFor="let appareil of tableauDesAppareils"
+          *ngFor="let appareil of tableauDesAppareils; let i = index"
+          [indexOfAppareil]="i"
           [appareilName]="appareil.name"
           [appareilStatus]="appareil.status"
         ></app-appareil>

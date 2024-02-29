@@ -10,6 +10,7 @@ export class AppareilComponent {
   // les propriétés personnalisées se déclarent avec le decorator Input
   @Input() appareilName!: string;
   @Input() appareilStatus!: string;
+  @Input() indexOfAppareil!: number;
 
   getStatus() {
     return this.appareilStatus;
