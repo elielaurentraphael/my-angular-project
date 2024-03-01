@@ -1,37 +1,5 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <h2>Mes appareils</h2>
-
-      <!-- pipe asynchrone, simulation d'une date venant d'un serveur -->
-      <p>Mis à jour: {{ lastUpdate | async | date : "EEEE d MMMM y" }}</p>
-
-      <!-- liste des appareils -->
-      <ul class="list-group">
-        <!-- la directive structurel *ngFor permet d'afficher, par itération, des objets contenus dans un array et, de récupérer l'index de chaque objet -->
-        <app-appareil
-          *ngFor="let appareil of tableauDesAppareils; let i = index"
-          [indexOfAppareil]="i"
-          [appareilName]="appareil.name"
-          [appareilStatus]="appareil.status"
-        ></app-appareil>
-      </ul>
-      <!-- property binding, du code ts vers le DOM. On utilise des crochets-->
-      <!-- event binding, du DOM vers le code ts. On utilise des parenthèses -->
-      <button
-        class="btn btn-success mt-3"
-        [disabled]="!isAuth"
-        (click)="onOnAll()"
-      >
-        Tout allumer
-      </button>
-      <button
-        class="btn btn-danger mt-3 ms-2"
-        [disabled]="!isAuth"
-        (click)="onOffAll()"
-      >
-        Tout éteindre
-      </button>
-    </div>
+    <app-appareil-view></app-appareil-view>
   </div>
 </div>
