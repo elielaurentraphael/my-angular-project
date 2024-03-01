@@ -2,6 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 // importation du AuthService depuis son dossier
 import { AuthService } from '../services/auth.service';
+// importation de Router depuis angular/router
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -13,8 +15,8 @@ export class AuthComponent implements OnInit {
   // création d'une propriété locale authStatus de type boolean
   authStatus!: boolean;
 
-  // injection de AuthService dans AuthComponent
-  constructor(private authService: AuthService) {}
+  // injection de AuthService dans AuthComponent, injection de Router (pour la navigation programmatique)
+  constructor(private authService: AuthService, private router: Router) {}
 
   // authStatus sera toujours égale à isAuth (isAuth = false -> authStatus = false; isAuth = true -> authStatus = true)
   ngOnInit() {
@@ -24,9 +26,10 @@ export class AuthComponent implements OnInit {
   // méthode d'appel de la méthode signIn()
   onSignIn() {
     this.authService.signIn().then(() => {
-      alert('connexion reussie !');
       // mise à jour de la propriété locale authStatus
       this.authStatus = this.authService.isAuth;
+      // redirection de l'user (car il est authentifié) vers la route des appareils
+      this.router.navigate(['appareils']);
     });
   }
 
