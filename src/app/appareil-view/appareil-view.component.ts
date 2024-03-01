@@ -7,9 +7,6 @@ import { AppareilService } from '../services/appareil.service';
   styleUrl: './appareil-view.component.scss',
 })
 export class AppareilViewComponent implements OnInit {
-  // par défaut, l'user n'est pas authentifié
-  isAuth = false;
-
   // simulation d'aller chercher la date au backend (sur un serveur)
   lastUpdate: Promise<Date> = new Promise((resolve, reject) => {
     const date = new Date();
@@ -21,12 +18,7 @@ export class AppareilViewComponent implements OnInit {
   tableauDesAppareils!: any[];
 
   // injection de AppareilService dans AppComponent
-  constructor(private appareilService: AppareilService) {
-    // simulation de la prcédure d'authentification de l'user
-    setTimeout(() => {
-      this.isAuth = true;
-    }, 4000);
-  }
+  constructor(private appareilService: AppareilService) {}
 
   // angular cherche tableauDesAppareils dans AppareilService
   ngOnInit() {

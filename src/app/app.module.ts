@@ -7,6 +7,8 @@ import { AppareilService } from './services/appareil.service';
 import { AuthComponent } from './auth/auth.component';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 import { RouterModule, Routes } from '@angular/router';
+// importation de AuthService depuis son dossier
+import { AuthService } from './services/auth.service';
 
 const appRoutes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
     AppareilViewComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
-  providers: [AppareilService],
+  // injection de AuthService dans AppModule
+  providers: [AppareilService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

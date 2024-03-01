@@ -16,14 +16,8 @@
   </ul>
   <!-- property binding, du code ts vers le DOM. On utilise des crochets-->
   <!-- event binding, du DOM vers le code ts. On utilise des parenthèses -->
-  <button class="btn btn-success mt-3" [disabled]="!isAuth" (click)="onOnAll()">
-    Tout allumer
-  </button>
-  <button
-    class="btn btn-danger mt-3 ms-2"
-    [disabled]="!isAuth"
-    (click)="onOffAll()"
-  >
+  <button class="btn btn-success mt-3" (click)="onOnAll()">Tout allumer</button>
+  <button class="btn btn-danger mt-3 ms-2" (click)="onOffAll()">
     Tout éteindre
   </button>
 </div>
