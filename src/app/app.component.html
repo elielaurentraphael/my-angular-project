@@ -1,4 +1,13 @@
 <div class="container">
+  <!-- barre de navigation utilisant bootstrap v532 et les attributs router d'angular v17.0.5 -->
+  <nav class="nav nav-tabs bg-light justify-content-center mt-5">
+    <a routerLink="auth" routerLinkActive="active" class="nav-link"
+      >Authentification</a
+    >
+    <a routerLink="appareils" routerLinkActive="active" class="nav-link"
+      >Appareils</a
+    >
+  </nav>
   <div class="row">
     <router-outlet></router-outlet>
   </div>
