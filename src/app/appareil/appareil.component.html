@@ -17,6 +17,7 @@
   <h4 [ngStyle]="{ color: getColor() }">
     Appareil : {{ appareilName }} -- Statut : {{ getStatus() }}
   </h4>
+  <a [routerLink]="[id]" class="nav-link">détail</a>
   <!-- liaison TWO WAY BINDING - Essayer dans le DOM et dans appareil.component.ts -->
   <input type="text" class="form-control" [(ngModel)]="appareilName" />
   <!-- allumage individuel - affichage par *ngIf - application de event binding -->

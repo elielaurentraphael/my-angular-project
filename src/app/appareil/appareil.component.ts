@@ -13,6 +13,8 @@ export class AppareilComponent {
   @Input() appareilName!: string;
   @Input() appareilStatus!: string;
   @Input() indexOfAppareil!: number;
+  // ajout d'un id unique obligatoir
+  @Input() id!: number;
 
   // injection de AppareilService dans AppareilComponent
   constructor(private appareilService: AppareilService) {}
