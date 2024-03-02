@@ -18,7 +18,7 @@ export class AppareilService {
     },
   ];
 
-  // méthode qui cherche un appareil par son id, utilisant la méthode find() d'un array
+  // méthode qui cherche un appareil par son id, utilisant la méthode find() de l'array appareils
   getAppareilById(nb: number) {
     const appareil = this.appareils.find((appareilObject) => {
       return appareilObject.id === nb;
