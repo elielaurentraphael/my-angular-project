@@ -18,6 +18,18 @@ export class AppareilService {
     },
   ];
 
+  // méthode qui cherche un appareil par son id, utilisant la méthode find() d'un array
+  getAppareilById(nb: number) {
+    const appareil = this.appareils.find((appareilObject) => {
+      return appareilObject.id === nb;
+    });
+    if (!appareil) {
+      throw new Error('Appareil not found !');
+    } else {
+      return appareil;
+    }
+  }
+
   // méthode pour tout allumer
   switchOnAll() {
     for (let appareil of this.appareils) {
