@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppareilService } from '../services/appareil.service';
+// importation de Subscription depuis rxjs
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-appareil-view',
@@ -16,13 +18,22 @@ export class AppareilViewComponent implements OnInit {
   });
 
   tableauDesAppareils!: any[];
+  // création de l'objet de souscription
+  appareilSubscription!: Subscription;
 
   // injection de AppareilService dans AppComponent
   constructor(private appareilService: AppareilService) {}
 
   // angular cherche tableauDesAppareils dans AppareilService
   ngOnInit() {
-    this.tableauDesAppareils = this.appareilService.appareils;
+    // utilisation de l'objet de souscription (souscrire à appareilSubject)
+    this.appareilSubscription = this.appareilService.appareilSubject.subscribe(
+      (appareils: any[]) => {
+        this.tableauDesAppareils = appareils;
+      }
+    );
+    // faire émettre appareilSubject
+    this.appareilService.emitAppareilSubject();
   }
 
   // AppComponent appelle la méthode switchOnAll() de AppareilService par sa méthode onOnAll()

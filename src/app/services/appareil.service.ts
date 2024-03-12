@@ -1,6 +1,11 @@
+// importation de Subject depuis rxjs
+import { Subject } from 'rxjs';
 export class AppareilService {
-  // les objets variables sont contenus dans un array
-  appareils = [
+  // création du Subject appareilSubject
+  appareilSubject = new Subject<any[]>();
+
+  // rendre private l'array appareils
+  private appareils = [
     {
       id: 1,
       name: 'Machine à laver',
@@ -17,6 +22,11 @@ export class AppareilService {
       status: 'éteint',
     },
   ];
+
+  // méthode permetant l'accès à la liste des appareils depuis l'extérieur. L'appel de la méthode next(argument) force appareilSubject à émettre l'argument
+  emitAppareilSubject() {
+    this.appareilSubject.next(this.appareils.slice());
+  }
 
   // méthode qui cherche un appareil par son id, utilisant la méthode find() de l'array appareils
   getAppareilById(nb: number) {
@@ -35,6 +45,8 @@ export class AppareilService {
     for (let appareil of this.appareils) {
       appareil.status = 'allumé';
     }
+    // faire émettre le Subject pour que les components qui sont souscris à ce Subject verront le changement automatiquement
+    this.emitAppareilSubject();
   }
 
   // méthode pour tout éteindre
@@ -42,15 +54,21 @@ export class AppareilService {
     for (let appareil of this.appareils) {
       appareil.status = 'éteint';
     }
+    // faire émettre le Subject pour que les components qui sont souscris à ce Subject verront le changement automatiquement
+    this.emitAppareilSubject();
   }
 
   // méthode d'allumage individuelle
   switchOnOne(index: number) {
     this.appareils[index].status = 'allumé';
+    // faire émettre le Subject pour que les components qui sont souscris à ce Subject verront le changement automatiquement
+    this.emitAppareilSubject();
   }
 
   // méthode d'extinction individuelle
   switchOffOne(index: number) {
     this.appareils[index].status = 'éteint';
+    // faire émettre le Subject pour que les components qui sont souscris à ce Subject verront le changement automatiquement
+    this.emitAppareilSubject();
   }
 }
