@@ -7,6 +7,8 @@ import { NgForm } from '@angular/forms';
   styleUrl: './edit-appareil.component.scss',
 })
 export class EditAppareilComponent {
+  defaultOnOff = 'éteint';
+
   onSubmit(form: NgForm) {
     console.log(form.value);
   }
