@@ -71,4 +71,22 @@ export class AppareilService {
     // faire émettre le Subject pour que les components qui sont souscris à ce Subject verront le changement automatiquement
     this.emitAppareilSubject();
   }
+
+  // méthode d'ajout d'un nouvel appareil par l'user
+  addAppareil(name: string, status: string) {
+    const appareilObject = {
+      id: 0,
+      name: '',
+      status: '',
+    };
+    // recupérer le nouvel appareil du formulaire
+    appareilObject.name = name;
+    appareilObject.status = status;
+    appareilObject.id = this.appareils[this.appareils.length - 1].id + 1;
+
+    // jnscrire le nouvel appareil dans la liste
+    this.appareils.push(appareilObject);
+    // émettre la nouvelle liste
+    this.emitAppareilSubject();
+  }
 }
