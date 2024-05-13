@@ -33,7 +33,7 @@ const appRoutes: Routes = [
     component: EditAppareilComponent,
   },
   { path: 'auth', component: AuthComponent },
-  { path: '', component: AppareilViewComponent },
+  { path: '', component: AuthComponent },
   { path: 'not-found', component: FourOhFourComponent },
   { path: '**', redirectTo: '/not-found' },
 ];
